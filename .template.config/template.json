@@ -8,5 +8,48 @@
 	"tags": {
 		"language": "C#",
 		"type": "project"
+	},
+	"sourceName": "ProjectName",
+	"preferNameDirectory": true,
+	"primaryOutputs": [
+		{
+			"path": "ProjectName.Web/ProjectName.Web.csproj"
+		},
+		{
+			"path": "ProjectName.ApiService/ProjectName.ApiService.csproj"
+		},
+		{
+			"path": "ProjectName.ServiceDefaults/ProjectName.ServiceDefaults.csproj"
+		},
+		{
+			"path": "ProjectName.Core/ProjectName.Core.csproj"
+		},
+		{
+			"path": "ProjectName.AppHost/ProjectName.AppHost.csproj"
+		},
+		{
+			"path": "ProjectName.Tests/ProjectName.Tests.csproj"
+		}
+	],
+	"sources": [
+		{
+			"modifiers": [
+				{
+					"condition": "(!excludeWeb)",
+					"exclude": [
+						"ProjectName.Web/obj/**",
+						"ProjectName.Web/bin/**"
+					]
+				}
+			]
+		}
+	],
+	"symbols": {
+		"excludeWeb": {
+			"type": "parameter",
+			"datatype": "bool",
+			"defaultValue": "false",
+			"description": "Exclude the Web project"
+		}
 	}
 }
